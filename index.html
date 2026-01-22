@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Seguro | Dashboard de Incidencias Ley N° 30096</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILO CSS PROFESIONAL (DARK MODE / INSTITUCIONAL) --- */
+        :root {
+            --primary-color: #0078d4; /* Azul Power BI / Institucional */
+            --bg-color: #0f172a;      /* Azul oscuro profundo (Ciberseguridad) */
+            --card-bg: #1e293b;       /* Gris azulado para tarjetas */
+            --text-color: #f1f5f9;    /* Blanco humo */
+            --accent-color: #38bdf8;  /* Cian brillante */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+            color: var(--text-color);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* Evita scroll innecesario */
+        }
+
+        /* Contenedor Principal */
+        .container {
+            background-color: rgba(30, 41, 59, 0.7); /* Transparencia */
+            backdrop-filter: blur(10px); /* Efecto vidrio esmerilado moderno */
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 120, 212, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Logo */
+        .logo-img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Tipografía */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+        }
+
+        /* Loader Circular */
+        .loader-container {
+            margin: 2rem auto;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--accent-color);
+            animation: spin 1s linear infinite;
+        }
+
+        /* Mensaje de Redirección */
+        .redirect-msg {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #timer {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* Botón Manual */
+        .manual-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .manual-link:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #64748b;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="./images/logo.png" alt="Escudo Ley 30096" class="logo-img">
+        
+        <h1>Dashboard <span class="highlight">2026</span></h1>
+        <h2>Incidencias Delictivas Ley N° 30096<br>Delitos Informáticos</h2>
+        
+        <div class="loader-container"></div>
+
+        <p class="redirect-msg">Estableciendo conexión segura con el servidor...</p>
+        <p>Redirigiendo en <span id="timer">5</span> segundos</p>
+
+        <br>
+        
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiZjRkYzA1ZjItYmU3Yi00N2VjLTgxYjgtZTYyMDE1NzgwYWU5IiwidCI6Ijc1MDRlMzE4LThlMWUtNGQ1NS1iZmZkLTg3NWI0ZGVlODI2MCIsImMiOjR9" class="manual-link">
+            Acceder Manualmente
+        </a>
+
+        <div class="footer">
+            Sistema de Gestión y Análisis de Hechos Delictivos<br>
+            Acceso autorizado únicamente.
+        </div>
+    </div>
+
+    <script>
+        // Configuración
+        const targetUrl = "https://app.powerbi.com/view?r=eyJrIjoiZjRkYzA1ZjItYmU3Yi00N2VjLTgxYjgtZTYyMDE1NzgwYWU5IiwidCI6Ijc1MDRlMzE4LThlMWUtNGQ1NS1iZmZkLTg3NWI0ZGVlODI2MCIsImMiOjR9";
+        let count = 5;
+        const timerElement = document.getElementById('timer');
+
+        // Función de cuenta regresiva
+        const countdown = setInterval(() => {
+            count--;
+            timerElement.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(countdown);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+
+        // Seguridad básica (Opcional: deshabilita clic derecho para sensación de "seguridad")
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Mensaje en consola para desarrolladores/analistas
+        console.log("%c SISTEMA DE CIBERINTELIGENCIA 2026 ", "background: #000; color: #00ff00; font-size: 20px; font-weight: bold;");
+        console.log("Iniciando protocolos de redirección segura...");
+    </script>
+
+</body>
+</html>
